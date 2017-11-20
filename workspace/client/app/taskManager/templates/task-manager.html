@@ -1,0 +1,47 @@
+<div layout="row" ng-cloak style="margin-top: 3%;">
+    <div flex="10"></div>
+    <div flex="80" class='m-20px-0' style="overflow-y: auto; overflow-x: hidden; margin-bottom: 5%;">
+        <md-toolbar class="md-hue-2" style="background-color: #49304f !important;">
+            <div class="md-toolbar-tools">
+                <div flex md-truncate>
+                    <h3 class="md-headline">Atividades</h3>
+                </div>
+                <md-button class="md-raised" ng-click="createTaskForm()" style="background-color: #ff6a36;">
+                    <span style="color: white;">Criar</span>
+                </md-button>
+            </div>
+        </md-toolbar>
+ 
+        <!-- 'search' bar will be here -->
+        <md-input-container class="md-block m-b-0px">
+            <form ng-submit="searchTask()">
+                <label>Procurar task...</label>
+                <input ng-model="taskSearchKeywords" />
+            </form>
+        </md-input-container>
+ 
+        <md-content flex>
+            <md-list ng-init="readProducts()">
+                <md-list-item ng-if="task.display == 'visible' ? true : false" class="md-3-line" ng-repeat="task in tasks" ng-click="null">
+                    <div class="md-list-item-text">
+                        <h3>{{task.title}}</h3>
+                        <h4>{{task.description}}</h4>
+                        <p>Status: {{task.status}}</p>
+                    </div>
+                    <div ng-if="task.status != 'Processando' ? true : false" class="md-secondary-container">
+                        <md-button class="md-raised md-primary" ng-click="showTaskDetailForm(task)" style="background-color: #ff6a36;">Detalhes</md-button>
+                        <md-button ng-disabled="(task.status == 'Processada' || task.status == 'Done') ? true : false" class="md-raised md-primary" ng-click="showUpdateTaskForm($index, task)" style="background-color: #ff6a36;">Editar</md-button>
+                        <md-button ng-disabled="(task.status == 'Processada' || task.status == 'Done') ? true : false" class="md-raised md-primary" ng-click="confirmDeleteTask($event, task, $index)" style="background-color: #ff6a36;">Deletar</md-button>
+                        <md-button ng-disabled="(task.status == 'Processada' || task.status == 'Done') ? true : false" class="md-raised md-primary" ng-click="submitTask($index)" style="background-color: #ff6a36;">Processar</md-button>
+                        <md-button ng-disabled="task.status == 'Done' ? true : false"class="md-raised md-primary" ng-click="closeTask($index)" style="background-color: #ff6a36;">Encerrar</md-button>
+                    </div>
+                    <div ng-if="task.status == 'Processando' ? true : false" layout="row" layout-align="center">
+                      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+    <div flex="10"></div>
+</div>

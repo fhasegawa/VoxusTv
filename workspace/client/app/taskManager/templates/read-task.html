@@ -1,0 +1,47 @@
+<md-dialog>
+    <form ng-cloak>
+        <md-toolbar style="background-color: #49304f !important;">
+            <div class="md-toolbar-tools">
+                <h2>Consultar Atividade</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                    <label>Título</label>
+                    <input ng-model="title" ng-readonly="true">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <label>Descrição</label>
+                    <input ng-model="description" ng-readonly="true">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <label>Anexo</label>
+                    <input ng-model="attachment" ng-readonly="true">
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label>Prioridade</label>
+                    <input ng-model="priority" ng-readonly="true">
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label>Criada por</label>
+                    <input ng-model="userName" ng-readonly="true">
+                </md-input-container>
+                
+                <md-input-container ng-if="closeBy != '' ? true : false" class="md-block">
+                    <label>Encerrada por</label>
+                    <input ng-model="closeBy" ng-readonly="true">
+                </md-input-container>
+ 
+            </div>
+        </md-dialog-content>
+ 
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">Fechar</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,46 @@
+<md-dialog>
+    <form name="updateTask" ng-cloak>
+        <md-toolbar style="background-color: #49304f !important;">
+            <div class="md-toolbar-tools">
+                <h2>Consultar Atividade</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block">
+                    <label>Título</label>
+                    <input ng-model="title" ng-required="true">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <label>Descrição</label>
+                    <input ng-model="description" ng-required="true">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <input ng-model="attachment" type="file" multiple onchange="angular.element(this).scope().setAttachments(this)">
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label>Criado por</label>
+                    <input ng-model="userName" ng-readonly="true">
+                </md-input-container>
+                
+                <md-input-container class="md-block">
+                    <label>Prioridade</label>
+                    <md-select ng-model="prioritySelected" ng-required="true">
+                        <md-option ng-value="priority" ng-repeat="priority in priorityList">
+                            {{priority}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                
+            </div>
+        </md-dialog-content>
+ 
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">Cancelar</md-button>
+            <md-button ng-disabled="updateTask.$invalid" ng-click="editTask(index)" class="md-primary">Editar</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

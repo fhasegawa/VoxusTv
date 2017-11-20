@@ -1,0 +1,126 @@
+body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+}
+.form-container {
+
+    width: 100%;
+    height: 90%;
+    min-height: 90%;
+
+}
+.gambleButton {
+
+    background-color: #1b49a0 !important;
+
+}
+.gambleButton:hover {
+
+    background-color: dodgerblue !important;
+    opacity: 0.8;
+
+}
+.lucky-number {
+
+    border-radius: 1% !important;
+    border: 1px solid dodgerblue !important;
+    min-width: 50px;
+    width: 100px;
+
+}
+.lucky-number:active {
+
+    background: #f00 !important;
+    opacity: 0.8;
+
+}
+.lucky-number:focus {
+
+    background: #BDDDFF !important;
+    opacity: 0.8;
+
+}
+.main {
+
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+}
+.main-container {
+
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    overflow: hidden;
+
+}
+.span-description {
+
+    position: relative;
+    vertical-align: middle;
+    color: red;
+
+}
+.startButton {
+
+    border: 1px solid white !important;
+    color: white !important;
+    background-color: transparent !important;
+
+}
+.startButton:hover {
+
+    background-color: dodgerblue !important;
+    opacity: 0.8;
+
+}
+.toolbarContent {
+
+    height: 70px !important;
+    min-height: 70px !important;
+    background-color: #1b49a0 !important;
+
+}
+.toolbarPage {
+
+    background-color: white !important;
+    max-height: 60px !important;
+    min-height: 60px !important;
+    height: 60px !important;
+
+}
+.toolbarPage-description {
+
+    color: #b4b4b4;
+    font-size: 15px;
+    padding: 1%;
+    width: 100%;
+
+}
+.welcome {
+
+    background-color: #49304f;
+    border-radius: 4px;
+    border: 1px solid rgba(110, 43, 120, 0.25);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 0;
+
+}
+.welcome h3 {
+
+    color: white;
+
+}
